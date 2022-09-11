@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trilhaapp/pages/login_page.dart';
 
 import '../../pages/dados_cadastrais.dart';
 
@@ -25,14 +26,14 @@ class CustonDrawer extends StatelessWidget {
                             Navigator.pop(context);
                           },
                           title: const Text("Camera"),
-                          leading: const Icon(Icons.camera),
+                          leading: const Icon(Icons.camera_alt),
                         ),
                         ListTile(
                           onTap: () {
                             Navigator.pop(context);
                           },
                           title: const Text("Galeria"),
-                          leading: const Icon(Icons.album),
+                          leading: const Icon(Icons.insert_photo),
                         )
                       ],
                     );
@@ -137,6 +138,62 @@ class CustonDrawer extends StatelessWidget {
                   ],
                 )),
             onTap: () {},
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.exit_to_app),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Sair"),
+                  ],
+                )),
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext bc) {
+                    return AlertDialog(
+                      alignment: Alignment.centerLeft,
+                      elevation: 8,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      title: const Text(
+                        "Meu App",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      content: Wrap(
+                        children: const [
+                          Text("Voce sairá do aplicativo!"),
+                          Text("Deseja realmente sair do aplicativo?"),
+                        ],
+                      ),
+                      actions: [
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text("Não")),
+                        TextButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const LoginPage()));
+                            },
+                            child: const Text("Sim"))
+                      ],
+                    );
+                  });
+            },
           ),
         ],
       ),
