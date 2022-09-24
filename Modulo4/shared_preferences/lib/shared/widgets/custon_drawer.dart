@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trilhaapp/pages/configuracoes_page.dart';
 import 'package:trilhaapp/pages/login_page.dart';
+import 'package:trilhaapp/pages/numeros_aleatorios_page.dart';
 
 import '../../pages/dados_cadastrais.dart';
 
@@ -130,6 +132,32 @@ class CustonDrawer extends StatelessWidget {
                 width: double.infinity,
                 child: Row(
                   children: const [
+                    Icon(Icons.numbers),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Gerador de números"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const NumerosAleatoriosPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
                     Icon(Icons.album),
                     SizedBox(
                       width: 5,
@@ -137,7 +165,13 @@ class CustonDrawer extends StatelessWidget {
                     Text("Configurações"),
                   ],
                 )),
-            onTap: () {},
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (bc) => const ConfiguracoesPage()));
+            },
           ),
           const Divider(),
           const SizedBox(
