@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trilhaapp/pages/card_page.dart';
 import 'package:trilhaapp/pages/tarefa_page/tarefa_hive_page.dart';
 import 'package:trilhaapp/pages/tarefa_page/tarefa_sqlite_page.dart';
+import 'package:trilhaapp/pages/consulta_cep.dart';
 
 import '../shared/widgets/custon_drawer.dart';
 import 'image_assets.dart';
@@ -37,6 +38,7 @@ class _MainPageState extends State<MainPage> {
                   });
                 },
                 children: const [
+                  ConsultaCEP(),
                   CardPage(),
                   ImageAssetsPage(),
                   ListViewPage(),
@@ -52,6 +54,8 @@ class _MainPageState extends State<MainPage> {
                 },
                 currentIndex: posicaoPagina,
                 items: const [
+                  BottomNavigationBarItem(
+                      label: "HTTP", icon: Icon(Icons.get_app_rounded)),
                   BottomNavigationBarItem(
                       label: "Pag1", icon: Icon(Icons.home)),
                   BottomNavigationBarItem(label: "Pag2", icon: Icon(Icons.add)),

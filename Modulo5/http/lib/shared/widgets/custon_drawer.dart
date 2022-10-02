@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:trilhaapp/pages/configuracoes/configuracoes_shared_preferences_page.dart';
 import 'package:trilhaapp/pages/login_page.dart';
 import 'package:trilhaapp/pages/numeros_aleatorios/numeros_aleatorios_shared_preferences_page.dart';
+import 'package:trilhaapp/pages/posts_page.dart';
 
+import '../../pages/characters/characters_page.dart';
 import '../../pages/configuracoes/configuracoes_hive_page.dart';
 import '../../pages/dados_cadastrais/dados_cadastrais_hive.dart';
 import '../../pages/numeros_aleatorios/numeros_aleatorios_hive_page.dart';
+import '../../repositories/marvel/marvel_repository.dart';
 
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({Key? key}) : super(key: key);
@@ -173,6 +176,54 @@ class CustonDrawer extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                       builder: (bc) => const ConfiguracoesHivePage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.post_add),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Posts"),
+                  ],
+                )),
+            onTap: () {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const PostsPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    Icon(Icons.help),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Herois"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.pop(context);
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (bc) => const CharactersPage()));
             },
           ),
           const Divider(),
