@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:trilhaapp/pages/home_page.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             create: (_) => TarefaRepository())
       ],
       child: Consumer<DarkModeService>(builder: (_, darkModeService, widget) {
-        return MaterialApp(
+        return GetMaterialApp(
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,

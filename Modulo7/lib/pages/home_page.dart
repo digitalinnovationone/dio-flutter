@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:provider/provider.dart';
+import 'package:trilhaapp/pages/getx/contador_getx_page.dart';
 import 'package:trilhaapp/pages/provider/tarefa_provider_page.dart';
 import 'package:trilhaapp/service/dark_mode_service.dart';
 import 'package:trilhaapp/shared/widgets/custon_drawer.dart';
@@ -31,7 +32,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabController = TabController(initialIndex: 0, length: 5, vsync: this);
+    tabController = TabController(initialIndex: 0, length: 6, vsync: this);
   }
 
   @override
@@ -63,6 +64,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ContadorMobXPage(),
           ContadorMobXStorePage(),
           TarefaMobXPage(),
+          ContadorGetXPage()
         ],
       ),
       bottomNavigationBar: ConvexAppBar.badge(
@@ -70,9 +72,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         items: const [
           TabItem(icon: Icons.home, title: 'P_1'),
           TabItem(icon: Icons.map, title: 'P_2'),
-          TabItem(icon: Icons.add, title: 'Add'),
-          TabItem(icon: Icons.message, title: 'Message'),
-          TabItem(icon: Icons.people, title: 'Brasil'),
+          TabItem(icon: Icons.add, title: 'M_1'),
+          TabItem(icon: Icons.message, title: 'M_2'),
+          TabItem(icon: Icons.people, title: 'M_3'),
+          TabItem(icon: Icons.people, title: 'G_1'),
         ],
         onTap: (int i) => tabController.index = i,
         controller: tabController,
