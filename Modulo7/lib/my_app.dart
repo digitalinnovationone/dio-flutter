@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<DarkModeService>(
             create: (_) => DarkModeService()),
-        ChangeNotifierProvider<ContadorService>(
-            create: (_) => ContadorService()),
+        ChangeNotifierProvider<ContadorProviderService>(
+            create: (_) => ContadorProviderService()),
         ChangeNotifierProvider<TarefaRepository>(
             create: (_) => TarefaRepository())
       ],

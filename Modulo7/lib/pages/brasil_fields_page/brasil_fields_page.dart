@@ -15,53 +15,56 @@ class _BrasilFieldsPageState extends State<BrasilFieldsPage> {
   var controllerCentavos = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text("CEP"),
-            TextFormField(
-              controller: controllerCEP,
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                CepInputFormatter(),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text("CPF"),
-            TextFormField(
-              controller: controllerCPF,
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                CpfInputFormatter(),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text("Centavos"),
-            TextFormField(
-              controller: controllerCentavos,
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                FilteringTextInputFormatter.digitsOnly,
-                CentavosInputFormatter(moeda: true),
-              ],
-            ),
-            Center(
-                child: TextButton(
-                    onPressed: () {
-                      print(CPFValidator.isValid(controllerCPF.text));
-                      print(CPFValidator.isValid(CPFValidator.generate()));
-                    },
-                    child: const Text("Continuar")))
-          ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(title: Text("Brasil mask")),
+        body: Container(
+          margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text("CEP"),
+              TextFormField(
+                controller: controllerCEP,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CepInputFormatter(),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text("CPF"),
+              TextFormField(
+                controller: controllerCPF,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CpfInputFormatter(),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              const Text("Centavos"),
+              TextFormField(
+                controller: controllerCentavos,
+                keyboardType: TextInputType.number,
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CentavosInputFormatter(moeda: true),
+                ],
+              ),
+              Center(
+                  child: TextButton(
+                      onPressed: () {
+                        print(CPFValidator.isValid(controllerCPF.text));
+                        print(CPFValidator.isValid(CPFValidator.generate()));
+                      },
+                      child: const Text("Continuar")))
+            ],
+          ),
         ),
       ),
     );

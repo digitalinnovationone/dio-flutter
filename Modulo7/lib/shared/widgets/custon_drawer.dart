@@ -17,6 +17,8 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 
+import '../../pages/brasil_fields_page/brasil_fields_page.dart';
+
 class CustonDrawer extends StatelessWidget {
   const CustonDrawer({Key? key}) : super(key: key);
 
@@ -468,6 +470,33 @@ class CustonDrawer extends StatelessWidget {
             onTap: () async {
               Navigator.push(context,
                   MaterialPageRoute(builder: (_) => const CameraPage()));
+            },
+          ),
+          const Divider(),
+          const SizedBox(
+            height: 10,
+          ),
+          InkWell(
+            child: Container(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                width: double.infinity,
+                child: Row(
+                  children: const [
+                    FaIcon(
+                      FontAwesomeIcons.brazilianRealSign,
+                      color: Colors.blue,
+                      size: 24,
+                    ),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Text("Brasil mask"),
+                  ],
+                )),
+            onTap: () async {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const BrasilFieldsPage()));
             },
           ),
         ].reversed.toList(),

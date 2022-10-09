@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trilhaapp/service/contador_service.dart';
 
-class ContadorPage extends StatelessWidget {
-  const ContadorPage({super.key});
+class ContadorProviderPage extends StatelessWidget {
+  const ContadorProviderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,12 @@ class ContadorPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Consumer<ContadorService>(builder: (_, contadorService, wiidget) {
+        const Text(
+          "Contador Provider",
+          style: TextStyle(fontSize: 26),
+        ),
+        Consumer<ContadorProviderService>(
+            builder: (_, contadorService, wiidget) {
           print("Consumer");
           return Text(
             contadorService.contador.toString(),
@@ -20,7 +25,7 @@ class ContadorPage extends StatelessWidget {
         }),
         TextButton(
             onPressed: () {
-              Provider.of<ContadorService>(context, listen: false)
+              Provider.of<ContadorProviderService>(context, listen: false)
                   .incrementar();
             },
             child: Text("Incrementar")),

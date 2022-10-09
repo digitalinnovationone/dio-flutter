@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:trilhaapp/models/tarefa.dart';
 import 'package:trilhaapp/repository/tarefa_repository.dart';
 
-class TarefaPage extends StatelessWidget {
+class TarefaProviderPage extends StatelessWidget {
   var descricaoContoller = TextEditingController();
 
   @override
@@ -45,6 +45,10 @@ class TarefaPage extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           child: Column(
             children: [
+              const Text(
+                "Tarefas Provider Store",
+                style: TextStyle(fontSize: 26),
+              ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 child: Row(
