@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             create: (_) => TarefaRepository())
       ],
       child: Consumer<DarkModeService>(builder: (_, darkModeService, widget) {
-        return GetMaterialApp(
+        return MaterialApp(
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,

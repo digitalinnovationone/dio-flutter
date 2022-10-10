@@ -13,6 +13,7 @@ import 'package:trilhaapp/service/dark_mode_service.dart';
 import 'package:trilhaapp/shared/widgets/custon_drawer.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'brasil_fields_page/brasil_fields_page.dart';
+import 'getx/tarefa_getx_page.dart';
 import 'mobx/contador_mobx_page.dart';
 import 'mobx/contador_mobx_store_page.dart';
 import 'mobx/tarefa_mobx_page.dart';
@@ -32,7 +33,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   void initState() {
     // TODO: implement initState
     super.initState();
-    tabController = TabController(initialIndex: 0, length: 6, vsync: this);
+    tabController = TabController(initialIndex: 0, length: 7, vsync: this);
   }
 
   @override
@@ -64,7 +65,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ContadorMobXPage(),
           ContadorMobXStorePage(),
           TarefaMobXPage(),
-          ContadorGetXPage()
+          ContadorGetXPage(),
+          TarefaGetXPage()
         ],
       ),
       bottomNavigationBar: ConvexAppBar.badge(
@@ -76,6 +78,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           TabItem(icon: Icons.message, title: 'M_2'),
           TabItem(icon: Icons.people, title: 'M_3'),
           TabItem(icon: Icons.people, title: 'G_1'),
+          TabItem(icon: Icons.people, title: 'G_2'),
         ],
         onTap: (int i) => tabController.index = i,
         controller: tabController,
