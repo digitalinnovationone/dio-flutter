@@ -1,0 +1,68 @@
+General	
+isNull	
+isNotNull	
+isTrue	
+isFalse	
+isAnything	
+isEmpty	works with Strings, Maps or Collections
+isZero	
+isNonZero	
+isPositive	
+isNonPositive	
+isNegative	
+isNonNegative	
+equals(v)	equals(expected)
+same(v)	same(expected)
+ 	
+Numeric	
+greaterThan(v)	
+greaterThanOrEqualTo(v)	
+lessThan(v)	
+lessThanOrEqualTo(v)	
+closeTo(value, delta)	
+inInclusiveRange(low, high)	low <= actual <= high
+inExclusiveRange(low, high)	low < actual < high
+inOpenClosedRange(low, high)	low < actual <= high
+inClosedOpenRange(low, high)	low <= actual < high
+ 	
+Strings	
+equalsIgnoringCase(v)	
+equalsIgnoringWhitespace(v)	
+startsWith(prefix)	
+endsWith(suffix)	
+stringContainsInOrder(List<String> substrings)	
+matches(regexp)	
+hasLength(m)	for objects who have length
+ 	
+Exceptions	
+returnsNormally	
+throws	
+throwsA(m)	
+throwsA(new isInstanceOf<T>())	Type Checking
+throwsBadNumberFormatException	
+throwsException	
+throwsIllegalArgumentException	
+throwsIndexOutOfRangeException	
+throwsNoSuchMethodException	
+throwsNotImplementedException	
+throwsNullPointerException	expect(()=> throw new NullPointerException(), throwsNullPointerException)
+throwsUnsupportedOperationException	
+ 	
+Content	
+recursivelyMatches(object, [limit])	
+contains(m)	expect([1, 2, 3, 4], contains(isNonZero));
+everyElement(m)	
+someElement(m)	expect(foo, someElement(greaterThan(10)));
+ 	
+Iterable	
+orderedEquals(Iterable expected)	
+unorderedEquals(Iterable expected)	
+ 	
+Maps	
+containsValue(v)	
+containsPair(key, valueOrMatcher)	
+ 	
+Inverting Matchers	
+isNot(matcher)	
+allOf(List<Mather> matchers)	
+anyOf(List<Mather> matchers)
