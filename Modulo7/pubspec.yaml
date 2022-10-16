@@ -59,6 +59,8 @@ dependencies:
   mobx: ^2.1.0
   flutter_mobx: ^2.0.6+4
   get: ^4.6.5
+  dio: ^4.0.6
+  get_it: ^7.2.0
 
 dev_dependencies:
   flutter_launcher_icons: "^0.10.0"

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:trilhaapp/pages/home_page.dart';
+import 'package:trilhaapp/pages/home/home_page.dart';
 import 'package:trilhaapp/pages/splash_screen/splash_screen_delay_page.dart';
 import 'package:trilhaapp/pages/splash_screen/splash_screen_page.dart';
 import 'package:easy_localization/easy_localization.dart';
