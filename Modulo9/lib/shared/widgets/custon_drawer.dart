@@ -2,8 +2,6 @@ import 'package:firebase/pages/tarefa/tarefa_page.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../pages/chat/chat_page.dart';
 
@@ -20,8 +18,8 @@ class CustonDrawer extends StatelessWidget {
       child: ListView(
         children: [
           ListTile(
-            leading: Icon(Icons.task),
-            title: Text("Tarefas"),
+            leading: const Icon(Icons.task),
+            title: const Text("Tarefas"),
             onTap: () {
               analytics.logEvent(name: "TarefaPage");
               Navigator.push(
@@ -29,8 +27,8 @@ class CustonDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.chat),
-            title: Text("Chat"),
+            leading: const Icon(Icons.chat),
+            title: const Text("Chat"),
             onTap: () {
               showDialog(
                   context: context,
@@ -55,7 +53,7 @@ class CustonDrawer extends StatelessWidget {
                                             nickName:
                                                 nicknameController.text)));
                               },
-                              child: Text("Entrar no chat"))
+                              child: const Text("Entrar no chat"))
                         ],
                       ),
                     );
@@ -63,8 +61,8 @@ class CustonDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(Icons.bug_report),
-            title: Text("Crashlytics"),
+            leading: const Icon(Icons.bug_report),
+            title: const Text("Crashlytics"),
             onTap: () {
               analytics.logEvent(name: "Exception");
               throw Exception();

@@ -21,7 +21,6 @@ class _TarefaPageState extends State<TarefaPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     carregarUsuario();
   }
@@ -111,7 +110,7 @@ class _TarefaPageState extends State<TarefaPage> {
                               .snapshots(),
                       builder: (context, snapshot) {
                         return !snapshot.hasData
-                            ? CircularProgressIndicator()
+                            ? const CircularProgressIndicator()
                             : ListView(
                                 children: snapshot.data!.docs.map((e) {
                                   var tarefa = TarefaModel.fromJson(
