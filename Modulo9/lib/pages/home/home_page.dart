@@ -1,10 +1,7 @@
 import 'package:firebase/pages/chat/chat_page.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/basic.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../shared/widgets/custon_drawer.dart';
 
@@ -19,9 +16,9 @@ class HomePage extends StatelessWidget {
         child: Scaffold(
       backgroundColor:
           Color(int.parse("0xff" + remoteConfig.getString("COR_FUNDO_TELA"))),
-      drawer: CustonDrawer(),
+      drawer: const CustonDrawer(),
       appBar: AppBar(
-        title: Text("Home"),
+        title: const Text("Home"),
       ),
     ));
   }
